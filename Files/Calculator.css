@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Caveat Brush", cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2196f3), to(#e91e63));
+  background: linear-gradient(#2196f3, #e91e63);
+}
+
+.bubbles {
+  position: absolute;
+  bottom: -120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 70px;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.bubbles span {
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-animation: move 10s linear infinite;
+          animation: move 10s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@-webkit-keyframes move {
+  100% {
+    -webkit-transform: translateY(-100vh);
+            transform: translateY(-100vh);
+  }
+}
+
+@keyframes move {
+  100% {
+    -webkit-transform: translateY(-100vh);
+            transform: translateY(-100vh);
+  }
+}
+
+.bubbles span.one {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+  -webkit-transform: scale(2.15);
+          transform: scale(2.15);
+}
+
+.bubbles span.two {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-transform: scale(1.55);
+          transform: scale(1.55);
+}
+
+.bubbles span.three {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-transform: scale(0.35);
+          transform: scale(0.35);
+}
+
+.bubbles span.four {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  -webkit-transform: scale(2.15);
+          transform: scale(2.15);
+}
+
+.bubbles span.five {
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.bubbles span.six {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+}
+
+.bubbles span.seven {
+  -webkit-animation-delay: 3;
+          animation-delay: 3;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.bubbles span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 40%;
+  -webkit-transform: skew(45deg) translateX(150px);
+          transform: skew(45deg) translateX(150px);
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-animation: mirror 3s linear infinite;
+          animation: mirror 3s linear infinite;
+}
+
+@-webkit-keyframes mirror {
+  100% {
+    -webkit-transform: translateX(-450px);
+            transform: translateX(-450px);
+  }
+}
+
+@keyframes mirror {
+  100% {
+    -webkit-transform: translateX(-450px);
+            transform: translateX(-450px);
+  }
+}
+
+.bubbles span.one:before {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.bubbles span.two:before {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.bubbles span.three:before {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.bubbles span.four:before {
+  -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+}
+
+.bubbles span.five:before {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.bubbles span.six:before {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.bubbles span.seven:before {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+.calculator-grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 100vh;
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  -ms-grid-rows: minmax(120px, auto) (100px)[5];
+      grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 2rem;
+  border: 1px solid transparent;
+}
+
+.calculator-grid > button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(77, 77, 77, 0.09);
+  border-radius: 20px;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+/*# sourceMappingURL=Calculator.css.map */
